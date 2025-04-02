@@ -1,0 +1,16 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+http://www.liquibase.org/xml/ns/dbchangelog
+https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    
+    <include file="db/changelog/script/V1__create_user_table.sql"/>
+    <include file="db/changelog/script/V2__insert_into_user.sql"/>
+<!--    <include file="db/changelog/script/V3__change_create_at_to_createAt.sql"/>-->
+    <include file="db/changelog/script/V4__add_column.sql"/>
+    <include file="db/changelog/script/V5__insert_into_username.sql"/>
+<!--    <include file="db/changelog/script/V6__change_username.sql"/>-->
+<!--    <include file="db/changelog/script/V7__change_column_name.sql" relativeToChangelogFile="true"/>-->
+</databaseChangeLog>
