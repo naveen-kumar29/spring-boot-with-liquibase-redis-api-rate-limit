@@ -16,3 +16,16 @@ spring:
       port: 6379
   cache:
     type: REDIS
+
+  quartz:
+    job-store-type: MEMORY
+    properties:
+        org:
+            quartz:
+            scheduler:
+                instanceName: MyQuartzScheduler
+            threadPool:
+                threadCount: 5
+
+  main:
+    allow-bean-definition-overriding: true
