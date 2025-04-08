@@ -29,3 +29,15 @@ spring:
 
   main:
     allow-bean-definition-overriding: true
+
+  graphql:
+        graphiql:
+            enabled: true
+            path: /graphql
+
+
+grpc:
+  client:
+    local-grpc-server:
+      address: static://localhost:9090
+      negotiationType: plaintext
