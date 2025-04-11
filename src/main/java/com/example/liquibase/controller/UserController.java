@@ -1,7 +1,6 @@
 package com.example.liquibase.controller;
 
 
-import com.example.liquibase.grpc.GreeterClient;
 import com.example.liquibase.entites.User;
 import com.example.liquibase.model.WebFlux;
 import com.example.liquibase.service.UserService;
@@ -24,16 +23,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    private final GreeterClient greeterClient;
-
-    // Inject via constructor
-    public UserController(GreeterClient greeterClient) {
-        this.greeterClient = greeterClient;
-    }
-
-
-
 
     @PostMapping("/api/create")
     public String createUser(@RequestBody User user) {
@@ -103,12 +92,6 @@ public class UserController {
 
         System.out.println("Exit WebFlux Process");
         return flux;
-    }
-
-
-    @GetMapping("/hello")
-    public String sayHello(@RequestParam String name) {
-        return greeterClient.SayHello(name);
     }
 
 }

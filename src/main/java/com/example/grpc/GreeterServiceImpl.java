@@ -1,8 +1,8 @@
-package com.example.liquibase.grpc;
+package com.example.grpc;
 
-import com.example.liquibase.grpc.GreeterServiceGrpc;
-import com.example.liquibase.grpc.HelloRequest;
-import com.example.liquibase.grpc.HelloResponse;
+import com.example.grpc.GreeterServiceGrpc;
+import com.example.grpc.HelloRequest;
+import com.example.grpc.HelloResponse;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 
