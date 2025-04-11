@@ -1,9 +1,5 @@
 package com.example.liquibase.config;
 
-import com.example.liquibase.component.QuartzScheduler;
-import org.quartz.*;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration

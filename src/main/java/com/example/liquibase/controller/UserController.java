@@ -1,12 +1,11 @@
 package com.example.liquibase.controller;
 
 
+import com.example.liquibase.grpc.GreeterClient;
 import com.example.liquibase.entites.User;
 import com.example.liquibase.model.WebFlux;
 import com.example.liquibase.service.UserService;
 
-import io.github.bucket4j.Bucket;
-import io.github.bucket4j.Refill;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
@@ -16,7 +15,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
 
-import java.time.Duration;
 import java.util.List;
 
 
@@ -26,6 +24,16 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    private final GreeterClient greeterClient;
+
+    // Inject via constructor
+    public UserController(GreeterClient greeterClient) {
+        this.greeterClient = greeterClient;
+    }
+
+
+
 
     @PostMapping("/api/create")
     public String createUser(@RequestBody User user) {
@@ -96,4 +104,11 @@ public class UserController {
         System.out.println("Exit WebFlux Process");
         return flux;
     }
+
+
+    @GetMapping("/hello")
+    public String sayHello(@RequestParam String name) {
+        return greeterClient.SayHello(name);
+    }
+
 }

@@ -1,17 +1,17 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.example.grpc";
-option java_outer_classname = "GreetingProto";
+option java_package = "com.example.liquibase.grpc";
+option java_outer_classname = "GreeterProto";
 
-service GreetingService {
-  rpc sayHello (GreetingRequest) returns (GreetingResponse);
+service GreeterService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
 }
 
-message GreetingRequest {
+message HelloRequest {
   string name = 1;
 }
 
-message GreetingResponse {
+message HelloResponse {
   string message = 1;
 }

@@ -38,6 +38,8 @@ spring:
 
 grpc:
   client:
-    local-grpc-server:
-      address: static://localhost:9090
+    greeter-service:
+      address: 'static://localhost:9090'
       negotiationType: plaintext
+  server:
+    port: 9090
